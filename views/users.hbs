@@ -1,0 +1,35 @@
+<h1>Customers</h1>
+
+<h4>Click <a href="/users" class="btn-floating red darken-1"><i class="material-icons">chevron_right</i></a> to view profile</h4>
+
+{{#if users}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>e-mail</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{email}}</td>
+                    <td>
+                        <a href="/transfers/profile/{{_id}}" class="btn-floating btn-small red darken-1"><i class="material-icons">chevron_right</i></a>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>There are no users</p>
+{{/if}}
+
+<div class="divider"></div>
+
+<br><br><br><br>
+<div class="fixed-action-btn">
+    <a href="/" class="btn btn-large red darken-1">Back to Dashboard</a>
+</div>

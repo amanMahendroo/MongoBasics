@@ -1,0 +1,36 @@
+<h1>Your Dashboard</h1>
+
+<h4>Previous Transfers</h4>
+
+{{#if transfers}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each transfers}}
+                <tr>
+                    <td>You</td>
+                    <td>{{to}}</td>
+                    <td>${{amount}}</td>
+                    <td>{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>There have been no transfers</p>
+{{/if}}
+
+<div class="divider"></div>
+
+<br><br><br><br>
+<div class="fixed-action-btn">
+    <a href="/users" class="btn btn-large red darken-1">View All Customers</a>
+    <a href="/transfers/interface" class="btn btn-large red darken-1">Transfer money now</a>
+</div>

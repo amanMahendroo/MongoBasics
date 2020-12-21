@@ -1,0 +1,27 @@
+<h1>Interface</h1>
+
+<div class="row">
+    <form action="/transfers" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <select name="user" id="user">
+                    <option value="null" selected>--select--</option>
+                    {{#each users}}
+                        <option value="{{name}}">{{name}}</option>
+                    {{/each}}
+                </select>
+                <label for="user">Select User</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="amount" name="amount" min="0.01" max="10000" step="0.01">
+                <label for="amount">Transfer amount</label>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Transfer" class="btn">
+            <a href="/" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
